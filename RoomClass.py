@@ -8,57 +8,55 @@ import copy
 
 class Room:
     """
-    Defines the rooms.
+    Defines the rooms as they get appended to the room list.
+    The class will create the correct number of monster and chest objects.
+    This depends on the values in the __init__ method.
+    The str method outputs what is in the room.
+    The run method runs the code for the actions taken within the room.
     """
+    #These variables allow random monster and chest objects to be generated.
+    monster_name_list = ["Troll", "Giant Lizard", "Weeping Angel", "Bear", "Spider", "Skeleton", "Rat", "Baby Dragon", "Snake", "Zombie"]
+    monster_health_list = list(range(10, 105, 5))
+    monster_attack_list = list(range(10, 55, 5))
+    chest_list = [0, 1]
 
-    Troll = Monster('Troll', 100, 10)
-    GiantLizard = Monster('Giant Lizard', 50, 50)
-    WeepingAngel = Monster('Weeping Angel', 80, 25)
-    Bear = Monster('Bear', 75, 35)
-    Spider = Monster('Radioactive Spider', 20, 45)
-    Skeleton = Monster('Skeleton', 60, 40)
-    Rat = Monster('Mutant Rat', 40, 20)
-    BabyDragon = Monster('Baby Dragon', 35, 70)
-    Snake = Monster('Toxic Snake', 60, 30)
-    Zombie = Monster('Zombie', 70, 25)
-    MonsterList = [Troll, GiantLizard, WeepingAngel, Bear, Spider, Skeleton, Rat, BabyDragon, Snake, Zombie]
 
-    Chest1 = Chest(1, 0)
-    Chest2 = Chest(0, 1)
-    Chest3 = Chest(0, 0)
-    Chest4 = Chest(1, 1)
-    ChestList = [Chest1, Chest2, Chest3, Chest4]
-
+    #Defines initial variables of the class.
     def __init__(self, NumMonsters, NumChests):
         self.nummonsters = NumMonsters
         self.numchests = NumChests
 
         if self.nummonsters == 2:
-            self.monster1 = copy.deepcopy(random.choice(Room.MonsterList))
-            self.monster2 = copy.deepcopy(random.choice(Room.MonsterList))
+            self.monster1 = Monster(random.choice(Room.monster_name_list), random.choice(Room.monster_health_list), random.choice(Room.monster_attack_list))
+            self.monster2 = Monster(random.choice(Room.monster_name_list), random.choice(Room.monster_health_list), random.choice(Room.monster_attack_list))
         elif self.nummonsters == 1:
-            self.monster1 = copy.deepcopy(random.choice(Room.MonsterList))
+            self.monster1 = Monster(random.choice(Room.monster_name_list), random.choice(Room.monster_health_list), random.choice(Room.monster_attack_list))
         if self.numchests == 2:
-            self.chest1 = copy.deepcopy(random.choice(Room.ChestList))
-            self.chest2 = copy.deepcopy(random.choice(Room.ChestList))
+            self.chest1 = Chest(random.choice(Room.chest_list), random.choice(Room.chest_list))
+            self.chest2 = Chest(random.choice(Room.chest_list), random.choice(Room.chest_list))
         elif self.numchests == 1:
-            self.chest1 = copy.deepcopy(random.choice(Room.ChestList))
+            self.chest1 = Chest(random.choice(Room.chest_list), random.choice(Room.chest_list))
 
-    def str(self):
+
+    #Outputs what is in the room.
+    def __str__(self):
         if self.nummonsters == 2:
             print('There is a', self.monster1.mname, 'in this room.')
             print('There is a', self.monster2.mname, 'in this room.')
-            time.sleep(7)
+            time.sleep(3)
         elif self.nummonsters == 1:
             print('There is a', self.monster1.mname, 'in this room.')
-            time.sleep(6)
+            time.sleep(3)
         if self.numchests == 2:
             print('There are 2 chests in this room.')
-            time.sleep(5)
+            time.sleep(3)
         elif self.numchests == 1:
             print('There is a chest in this room.')
-            time.sleep(5)
+            time.sleep(3)
+        return ""
 
+
+    #Runs the code for the actions taken in the room.
     def run(self, Character):
         if self.nummonsters == 2:
             self.monster1.str()
