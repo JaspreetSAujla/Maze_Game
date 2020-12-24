@@ -14,14 +14,14 @@ class Room:
     The str method outputs what is in the room.
     The run method runs the code for the actions taken within the room.
     """
-    #These variables allow random monster and chest objects to be generated.
+    # These variables allow random monster and chest objects to be generated.
     monster_name_list = ["Troll", "Giant Lizard", "Weeping Angel", "Bear", "Spider", "Skeleton", "Rat", "Baby Dragon", "Snake", "Zombie"]
     monster_health_list = list(range(10, 105, 5))
     monster_attack_list = list(range(10, 55, 5))
-    chest_list = [0, 1]
+    chest_list = [0, 1]                          # To choose either 0/1 weapon or armour items.
 
 
-    #Defines initial variables of the class.
+    # Defines initial variables of the class.
     def __init__(self, NumMonsters, NumChests):
         self.nummonsters = NumMonsters
         self.numchests = NumChests
@@ -38,7 +38,7 @@ class Room:
             self.chest1 = Chest(random.choice(Room.chest_list), random.choice(Room.chest_list))
 
 
-    #Outputs what is in the room.
+    # Outputs what is in the room.
     def __str__(self):
         if self.nummonsters == 2:
             print('There is a', self.monster1.mname, 'in this room.')
@@ -56,7 +56,7 @@ class Room:
         return ""
 
 
-    #Runs the code for the actions taken in the room.
+    # Runs the code for the actions taken in the room.
     def run(self, Character):
         if self.nummonsters == 2:
             self.monster1.str()
