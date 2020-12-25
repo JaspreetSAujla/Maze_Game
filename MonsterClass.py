@@ -27,7 +27,7 @@ class Monster:
 
     # Outputs the monster's stats.
     def str(self):
-        print(self.mname, 'Health:', self.mhealth, 'Attack:', self.mattack)
+        print(f"{self.mname} --- Health: {self.mhealth}, Attack: {self.mattack}")
         time.sleep(3)
 
 

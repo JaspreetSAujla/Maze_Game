@@ -16,8 +16,8 @@ class Room:
     """
     # These variables allow random monster and chest objects to be generated.
     monster_name_list = ["Troll", "Giant Lizard", "Weeping Angel", "Bear", "Spider", "Skeleton", "Rat", "Baby Dragon", "Snake", "Zombie"]
-    monster_health_list = list(range(10, 105, 5))
-    monster_attack_list = list(range(10, 55, 5))
+    monster_health_list = list(range(20, 100, 5))
+    monster_attack_list = list(range(5, 45, 5))
     chest_list = [0, 1]                          # To choose either 0/1 weapon or armour items.
 
 
@@ -77,3 +77,26 @@ class Room:
         else:
             print('There are no chests in this room.')
             time.sleep(3)
+    
+
+    def BossBattle(self, Character):
+        """
+        This function runs the final boss battle.
+        Once the player reaches the final room, they must fight the boss.
+        Takes the Character as a parameter.
+        Two lists have been defined for the monster attack and health.
+        A new monster object is defined and the fight function is run.
+        """
+        dragon_attack_list = list(range(30, 75, 5))
+        dragon_health_list = list(range(150, 310, 20))
+        # Define new monster object.
+        dragon = Monster("Giant Dragon", random.choice(dragon_health_list), random.choice(dragon_attack_list))
+        print("You enter a room and see a Giant Dragon!")
+        time.sleep(2)
+        print("You can see the exit behind the dragon.")
+        time.sleep(2)
+        print("You must fight the dragon to escape...")
+        time.sleep(2)
+        dragon.str()
+        dragon.fight(Character)
+

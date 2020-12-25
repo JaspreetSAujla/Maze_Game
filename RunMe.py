@@ -11,7 +11,6 @@ if __name__ == "__main__":
     input("Press enter if code does not continue.")
     # Defines initial variables.
     number_list = [0, 1, 2]                         # Used for Monster and Chest numbers,
-    room_list = []
     max_rooms = random.randint(3, 10)               # Inclusive at both points.
     room_number = 0                                 # Used as a counter.
     current_room = None                             # Used in while loop to define room.
@@ -61,12 +60,14 @@ if __name__ == "__main__":
         print('There are 3 doors you can go through, left, right and forward.')
         Response = input('Which door do you go through? \n(left/right/forward) \n')
         room_number += 1
+    # Function to run the final boss battle.
+    current_room.BossBattle(Character)
     # Ends the game if the player makes it out.
     print('Well done!')
     print('You actually made it out.')
     time.sleep(3)
     print("Your character's stats are:")
-    Character.str()
+    print(Character)
     time.sleep(3)
     print('You got lucky...')
     input('Press any button to exit.')
