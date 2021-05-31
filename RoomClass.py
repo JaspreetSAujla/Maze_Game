@@ -1,10 +1,7 @@
 import random
 import time
-import sys
-from HeroClass import Hero
 from MonsterClass import Monster
 from ChestClass import Chest
-import copy
 
 class Room:
     """
@@ -99,4 +96,3 @@ class Room:
         time.sleep(2)
         dragon.str()
         dragon.fight(Character)
-

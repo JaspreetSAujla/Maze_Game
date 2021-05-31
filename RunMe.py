@@ -2,21 +2,26 @@ import random
 import time
 import sys
 from HeroClass import Hero
-from MonsterClass import Monster
-from ChestClass import Chest
 from RoomClass import Room
 import copy
 
 if __name__ == "__main__":
     input("Press enter if code does not continue.")
+    
     # Defines initial variables.
     number_list = [0, 1, 2]                         # Used for Monster and Chest numbers,
     max_rooms = random.randint(3, 10)               # Inclusive at both points.
     room_number = 0                                 # Used as a counter.
     current_room = None                             # Used in while loop to define room.
-    Steve = Hero('Steve', 80, 21)
-    Alex = Hero('Alex', 60, 30)
-    Chloe = Hero('Chloe', 100, 16)
+    Steve = Hero(HName = 'Steve',
+                 HHealth = 80,
+                 HAttack = 21)
+    Alex = Hero(HName = 'Alex',
+                HHealth = 60,
+                HAttack = 30)
+    Chloe = Hero(HName = 'Chloe',
+                 HHealth = 100,
+                 HAttack = 16)
 
     # Introduces the player to the game.
     print('Welcome contender.')
@@ -52,16 +57,17 @@ if __name__ == "__main__":
     # Loops over for the number of rooms there are.
     while room_number < max_rooms:
         # Defines a new room.
-        current_room = Room(random.choice(number_list), random.choice(number_list))
+        current_room = Room(NumMonsters = random.choice(number_list),
+                            NumChests = random.choice(number_list))
         print(current_room)
         # The main function that runs the room.
         # Takes character as input to be used in other files.
-        current_room.run(Character)
+        current_room.run(Character = Character)
         print('There are 3 doors you can go through, left, right and forward.')
         Response = input('Which door do you go through? \n(left/right/forward) \n')
         room_number += 1
     # Function to run the final boss battle.
-    current_room.BossBattle(Character)
+    current_room.BossBattle(Character = Character)
     # Ends the game if the player makes it out.
     print('Well done!')
     print('You actually made it out.')
