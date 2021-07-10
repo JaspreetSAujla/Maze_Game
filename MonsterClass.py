@@ -1,7 +1,6 @@
 import random
 import time
 import sys
-from HeroClass import Hero
 import copy
 
 class Monster:
@@ -10,29 +9,78 @@ class Monster:
     Takes the Name, Health and Attack of the monster as inputs.
     Str outputs the monsters stats.
     The fight method runs the code for the fight scene.
+
+    Class Variables:
+        Response = Stores the response of the player for whether they 
+                   want to dodge or block the attack.
+        
+        Number = Stores a list of numbers which are used to determine 
+                 the probability of blocking an attack.
+        
+        Number2 = Stores a list of numbers which are used to determine 
+                  the probability of dodging an attack.
+        
+        Chance = Stores the value that is picked from the Number and 
+                 Number2 list, and executes the corresponding code.
+    
+    Attributes:
+        MName = Stores the name of the monster.
+
+        MHealth = Stores the health of the monster.
+
+        MAttack = Stores the attack of the monster.
+    
+    Methods:
+        __init__ = Initialises the object with input variables.
+
+        str = Prints the stats of the monster.
+
+        fight = Performs the fight scene.
     """
-    # These variables are used in the fight scene.
-    Response = 0
+    Response = None
     Number = [0, 1, 0, 0, 1, 1]
     Number2 = [0, 1, 1]
-    Chance = 0
+    Chance = None
 
 
-    # Defines the initial variables
+    
     def __init__(self, MName, MHealth, MAttack):
+        """
+        Defines the initial variables when an instance of this class 
+        is initialised.
+
+        Variables:
+            self.mname = Defines the name of the monster.
+
+            self.mhealth = Defines the health of the monster.
+
+            self.mattack = Defines the attack of the monster.
+        """
         self.mname = MName
         self.mhealth = MHealth
         self.mattack = MAttack
 
 
-    # Outputs the monster's stats.
+    
     def str(self):
+        """
+        Prints the stats of the monster.
+        """
         print(f"{self.mname} --- Health: {self.mhealth}, Attack: {self.mattack}")
         time.sleep(3)
 
 
-    # Code for the fight scene.
+    
     def fight(self, Character):
+        """
+        Performs the code for the fight scene.
+        Player can choose to block or dodge attacks from the monster. 
+        Random probability of of either decision being successful.
+
+        Parameters:
+            Character = Uses the character object to perform the fight 
+                        scene.
+        """
         print('You must fight the', self.mname)
         time.sleep(3)
         print('You attack first.')
@@ -72,7 +120,7 @@ class Monster:
                     Character.hhealth -= self.mattack
             # Checks hero health after each attack.
             # Ends game if hero health is zero.
-            if Character.hhealth < 0:
+            if Character.hhealth < 1:
                 time.sleep(1)
                 print('Your health has been reduced to zero.')
                 time.sleep(3)
