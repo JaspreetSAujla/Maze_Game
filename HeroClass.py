@@ -5,11 +5,11 @@ class Hero:
     __str__ method outputs the stats of the hero.
 
     Attributes:
-        HName = Defines the name of the hero.
+        HeroName = Defines the name of the hero.
 
-        HHealth = Defines the health of the hero.
+        HeroHealth = Defines the health of the hero.
 
-        HAttack = Defines the attack of the hero.
+        HeroAttack = Defines the attack of the hero.
     
     Methods:
         __init__ = Defines the initial attributes as variables.
@@ -19,21 +19,21 @@ class Hero:
 
 
     
-    def __init__(self, HName, HHealth, HAttack):
+    def __init__(self, HeroName, HeroHealth, HAttack):
         """
         Defines the intial variables of the object from the attributes 
         that are passed into the class.
 
         Variables:
-            self.hname = Defines the hero's name.
+            self.hero_name = Defines the hero's name.
 
-            self.hhealth = Defines the hero's health.
+            self.hero_health = Defines the hero's health.
 
-            self.hattack = Defines the hero's attack.
+            self.hero_attack = Defines the hero's attack.
         """
-        self.hname = HName
-        self.hhealth = HHealth
-        self.hattack = HAttack
+        self.hero_name = HeroName
+        self.hero_health = HeroHealth
+        self.hero_attack = HAttack
         
 
     
@@ -41,4 +41,4 @@ class Hero:
         """
         Returns the stats of the hero.
         """
-        return f"Name: {self.hname}, Health: {self.hhealth}, Attack: {self.hattack}"
+        return f"Name: {self.hero_name}, Health: {self.hero_health}, Attack: {self.hero_attack}"
