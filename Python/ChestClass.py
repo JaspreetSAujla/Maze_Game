@@ -75,25 +75,35 @@ class Chest:
         Variables:
             response = Stores the response of the player. Tells the code 
                        if the player wants to open a chest or not.
+            
+            valid_response = Stores whether the response was valid.
         """
+        valid_response = False
         response = input('There is a chest here, would you like to open it? \n(yes/no) \n')
-        if response == 'yes':
-            if self.number_of_weapons == 1:
-                print(f"You have found a {random.choice(Chest.WeaponsList)}.")
-                time.sleep(1)
-                print(f"Adding {self.weapon_points} to your attack points.")
-                Character.hero_attack += self.weapon_points
-                time.sleep(1)
-                print(Character)
-                time.sleep(1)
-            if self.number_of_armour == 1:
-                print(f"You have found a {random.choice(Chest.ArmourList)}.")
-                time.sleep(1)
-                print(f"Adding {self.armour_points} to your health points.")
-                Character.hero_health += self.armour_points
-                time.sleep(1)
-                print(Character)
-                time.sleep(1)
-            if self.number_of_armour == 0 and self.number_of_weapons == 0:
-                print('This chest is empty.')
-                time.sleep(1)
+        while valid_response == False:
+            valid_response = True
+            if response == 'yes':
+                if self.number_of_weapons == 1:
+                    print(f"You have found a {random.choice(Chest.WeaponsList)}.")
+                    time.sleep(1)
+                    print(f"Adding {self.weapon_points} to your attack points.")
+                    Character.hero_attack += self.weapon_points
+                    time.sleep(1)
+                    print(Character)
+                    time.sleep(1)
+                if self.number_of_armour == 1:
+                    print(f"You have found a {random.choice(Chest.ArmourList)}.")
+                    time.sleep(1)
+                    print(f"Adding {self.armour_points} to your health points.")
+                    Character.hero_health += self.armour_points
+                    time.sleep(1)
+                    print(Character)
+                    time.sleep(1)
+                if self.number_of_armour == 0 and self.number_of_weapons == 0:
+                    print('This chest is empty.')
+                    time.sleep(1)
+            elif response == "no":
+                print("You choose not to open the chest.")
+            else:
+                print("Invalid response, try again. \(yes/no)")
+                valid_response = False
