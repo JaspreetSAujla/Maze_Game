@@ -18,12 +18,6 @@ class Chest:
 
         ArmourList = Stores a string list of random bits of armour.
 
-    Attributes:
-        NumberOfWeapons = Defines how many weapons can be found in a chest.
-
-        NumberOfArmour = Defines how many pieces of armour can be 
-                         found in a chest.
-
     Methods:
         __init__ = Defines the initial variables using the attributes.
 
@@ -35,7 +29,7 @@ class Chest:
 
 
     
-    def __init__(self, NumberOfWeapons, NumberOfArmour):
+    def __init__(self):
         """
         Defines the initial variables using the attributes passed into the 
         class.
@@ -51,8 +45,9 @@ class Chest:
 
             self.armour_points = Stores the health points of the armour.
         """
-        self.number_of_weapons = NumberOfWeapons
-        self.number_of_armour = NumberOfArmour
+        # Picks random number of weapons and armour between 1 and 0.
+        self.number_of_weapons = random.randint(0, 1)
+        self.number_of_armour = random.randint(0, 1)
 
         # If the chest has either a weapon or armour, then a random 
         # number from the Numbers list is assigned to it.
