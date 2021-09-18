@@ -25,6 +25,14 @@ class Monster:
         MonsterHealth = Stores the health of the monster.
 
         MonsterAttack = Stores the attack of the monster.
+
+        MonsterNamesList = Stores a list of names for the monsters.
+
+        MonsterHealthList = Stores a list of values that the monsters 
+                            health could be.
+        
+        MonsterAttackList = Stores a list of values that the monsters 
+                            health could be.
     
     Methods:
         __init__ = Initialises the object with input variables.
@@ -33,12 +41,17 @@ class Monster:
 
         fight = Performs the fight scene.
     """
+    MonsterNamesList = ["Troll", "Giant Lizard", "Weeping Angel", 
+                        "Bear", "Spider", "Skeleton", "Rat", 
+                        "Baby Dragon", "Snake", "Zombie"]
+    MonsterHealthList = list(range(20, 100, 5))
+    MonsterAttackList = list(range(5, 45, 5))
     NumbersForBlocking = [0, 1, 0, 0, 1, 1]
     NumbersForDodging = [0, 1, 1]
 
 
     
-    def __init__(self, MonsterName, MonsterHealth, MonsterAttack):
+    def __init__(self, MonsterName = random.choice(MonsterNamesList), MonsterHealth = random.choice(MonsterHealthList), MonsterAttack = random.choice(MonsterAttackList)):
         """
         Defines the initial variables when an instance of this class 
         is initialised.
