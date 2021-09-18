@@ -19,7 +19,7 @@ class Hero:
 
 
     
-    def __init__(self, HeroName, HeroHealth, HAttack):
+    def __init__(self, HeroName, HeroHealth, HeroAttack):
         """
         Defines the intial variables of the object from the attributes 
         that are passed into the class.
@@ -33,7 +33,7 @@ class Hero:
         """
         self.hero_name = HeroName
         self.hero_health = HeroHealth
-        self.hero_attack = HAttack
+        self.hero_attack = HeroAttack
         
 
     

@@ -51,10 +51,12 @@ class Monster:
 
 
     
-    def __init__(self, MonsterName = random.choice(MonsterNamesList), MonsterHealth = random.choice(MonsterHealthList), MonsterAttack = random.choice(MonsterAttackList)):
+    def __init__(self, MonsterName = None, MonsterHealth = None, MonsterAttack = None):
         """
         Defines the initial variables when an instance of this class 
         is initialised.
+        If no default values are given, then they are picked randomly 
+        from class variables.
 
         Variables:
             self.monster_name = Defines the name of the monster.
@@ -63,9 +65,18 @@ class Monster:
 
             self.monster_attack = Defines the attack of the monster.
         """
-        self.monster_name = MonsterName
-        self.monster_health = MonsterHealth
-        self.monster_attack = MonsterAttack
+        if MonsterName == None:
+            self.monster_name = random.choice(Monster.MonsterNamesList)
+        else:
+            self.monster_name = MonsterName
+        if MonsterHealth == None:
+            self.monster_health = random.choice(Monster.MonsterHealthList)
+        else:
+            self.monster_health = MonsterHealth
+        if MonsterAttack == None:
+            self.monster_attack = random.choice(Monster.MonsterAttackList)
+        else:
+            self.monster_attack = MonsterAttack
 
 
     
@@ -117,7 +128,7 @@ class Monster:
             valid_response = False
             while valid_response == False:
                 response = input('Do you want to block or dodge the next attack? \n(block/dodge) \n')
-                valid_response == True
+                valid_response = True
                 if response == 'block':
                     chance = copy.deepcopy(random.choice(Monster.NumbersForBlocking))
                     if chance == 1:
@@ -141,6 +152,7 @@ class Monster:
                         Character.hero_health -= self.monster_attack
                 else:
                     print("invalid response, try again.")
+                    valid_response = False
 
             # Checks hero health after each attack.
             # Ends game if hero health is zero.

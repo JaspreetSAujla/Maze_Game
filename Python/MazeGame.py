@@ -123,7 +123,7 @@ class MazeGame:
             print(current_room)
             # The main function that runs the room.
             # Takes character as input to be used in other files.
-            current_room.run(Character = self.character)
+            current_room.run_room(Character = self.character)
             print('There are 3 doors you can go through, left, right and forward.')
             input('Which door do you go through? \n(left/right/forward) \n')
             current_room_number += 1
