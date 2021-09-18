@@ -79,8 +79,8 @@ class Chest:
             valid_response = Stores whether the response was valid.
         """
         valid_response = False
-        response = input('There is a chest here, would you like to open it? \n(yes/no) \n')
         while valid_response == False:
+            response = input('There is a chest here, would you like to open it? \n(yes/no) \n')
             valid_response = True
             if response == 'yes':
                 if self.number_of_weapons == 1:
@@ -105,5 +105,5 @@ class Chest:
             elif response == "no":
                 print("You choose not to open the chest.")
             else:
-                print("Invalid response, try again. \(yes/no)")
+                print("Invalid response, try again.")
                 valid_response = False
