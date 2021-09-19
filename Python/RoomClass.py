@@ -17,6 +17,8 @@ class Room:
         __str__ = Prints what is in the room.
 
         run_room = Runs the code for the room.
+
+        boss_battle = Runs the code for the boss battle.
     """
     
 
@@ -106,7 +108,7 @@ class Room:
     
 
 
-    def BossBattle(self, Character):
+    def boss_battle(self, Character):
         """
         This function runs the final boss battle.
         Once the player reaches the final room, they must fight the boss.
