@@ -51,8 +51,8 @@ class Monster {
 
     Monster() {
         this.monsterName = MonsterNames[RandomNumber.nextInt(MonsterNames.length)];
-        this.monsterHealth = 20 + RandomNumber.nextInt(96);
-        this.monsterAttack = 5 + RandomNumber.nextInt(41);
+        this.monsterHealth = 20 + RandomNumber.nextInt(76);
+        this.monsterAttack = 5 + RandomNumber.nextInt(36);
     }
 
 
@@ -105,12 +105,12 @@ class Monster {
 
         // Loops as long as the monster is alive.
         while (this.monsterHealth > 0) {
-            System.out.println("You inflicted " + hero.heroAttack + " to the monster.");
+            System.out.println("You inflicted " + hero.heroAttack + " damage to the monster.");
             this.monsterHealth -= hero.heroAttack;
             if (this.monsterHealth < 1) {
                 continue;
             }
-            System.out.println(this.monsterName + "health: " + this.monsterHealth);
+            System.out.println(this.monsterName + " health: " + this.monsterHealth);
 
             // Player can pick whether to block or dodge.
             // Both have different outcomes.

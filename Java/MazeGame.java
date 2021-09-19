@@ -87,9 +87,9 @@ public class MazeGame {
                 System.out.println("Invalid response, try again.");
                 validResponse = false;
             }
-            System.out.println("You have chosen: ");
-            this.hero.description();
         }
+        System.out.println("You have chosen: ");
+        this.hero.description();
     }
 
 

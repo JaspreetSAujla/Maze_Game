@@ -137,8 +137,8 @@ class Room {
             dragon = Defines the boss.
         */
         Monster dragon = new Monster("Giant Dragon", 
-                                     30 + RandomNumber.nextInt(71), 
-                                     150 + RandomNumber.nextInt(301));
+                                     150 + RandomNumber.nextInt(151), 
+                                     30 + RandomNumber.nextInt(61));
         System.out.println("You enter the room and see a Giant Dragon.");
         System.out.println("You can see the exit behind it.");
         System.out.println("You nust fight the dragon to escape.");
