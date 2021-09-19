@@ -76,7 +76,7 @@ class MazeGame:
         print('Let us see if you can make it out...')
         time.sleep(1)
         print('Here are your character choices:')
-        print(MazeGame.Steve)                                    # Prints the stats.
+        print(MazeGame.Steve)   
         print(MazeGame.Alex)
         print(MazeGame.Chloe)
         time.sleep(1)
@@ -129,7 +129,7 @@ class MazeGame:
             current_room_number += 1
 
         # Function to run the final boss battle.
-        current_room.BossBattle(Character = self.character)
+        current_room.boss_battle(Character = self.character)
         # Ends the game if the player makes it out.
         print('Well done!')
         print('You actually made it out.')
