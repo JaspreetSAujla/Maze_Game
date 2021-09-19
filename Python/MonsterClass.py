@@ -18,14 +18,7 @@ class Monster:
         NumbersForDodging = Stores a list of numbers which are 
                             used to determine the probability 
                             of dodging an attack.
-    
-    Attributes:
-        MonsterName = Stores the name of the monster.
-
-        MonsterHealth = Stores the health of the monster.
-
-        MonsterAttack = Stores the attack of the monster.
-
+        
         MonsterNamesList = Stores a list of names for the monsters.
 
         MonsterHealthList = Stores a list of values that the monsters 
@@ -33,6 +26,13 @@ class Monster:
         
         MonsterAttackList = Stores a list of values that the monsters 
                             health could be.
+    
+    Attributes:
+        MonsterName = Stores the name of the monster.
+
+        MonsterHealth = Stores the health of the monster.
+
+        MonsterAttack = Stores the attack of the monster.
     
     Methods:
         __init__ = Initialises the object with input variables.
