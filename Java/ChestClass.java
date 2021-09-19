@@ -57,10 +57,10 @@ class Chest {
 
         // Assign points to weapons.
         if (this.numberOfWeapons == 1) {
-            this.weaponPoints = RandomNumber.nextInt(22);
+            this.weaponPoints = 1 + RandomNumber.nextInt(22);
         }
         if (this.numberOfArmour == 1) {
-            this.armourPoints = RandomNumber.nextInt(22);
+            this.armourPoints = 1 + RandomNumber.nextInt(22);
         }
     }
 
