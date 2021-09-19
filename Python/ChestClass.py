@@ -24,7 +24,7 @@ class Chest:
         open = Runs the code for when the player wants to open the chest.
     """
     Numbers = list(range(2, 22, 2))
-    WeaponsList = ['Sword', 'Hammer', 'Knife', 'Dagger', 'Axe', 'Trident']
+    WeaponsList = ['a Sword', 'a Hammer', 'a Knife', 'a Dagger', 'an Axe', 'a Trident']
     ArmourList = ['Helmet', 'Vest', 'Chest Plate', 'Shield', 'pair of Boots', 'bit of mesh']
 
 
@@ -64,8 +64,8 @@ class Chest:
         Player can either open the chest or choose to ignore it.
 
         Parameters:
-            Characters = Passes in the player so that its attributes 
-                         can be accessed.
+            Character = Passes in the player so that its attributes 
+                        can be accessed.
 
         Variables:
             response = Stores the response of the player. Tells the code 
@@ -79,7 +79,7 @@ class Chest:
             valid_response = True
             if response == 'yes':
                 if self.number_of_weapons == 1:
-                    print(f"You have found a {random.choice(Chest.WeaponsList)}.")
+                    print(f"You have found {random.choice(Chest.WeaponsList)}.")
                     time.sleep(1)
                     print(f"Adding {self.weapon_points} to your attack points.")
                     Character.hero_attack += self.weapon_points
