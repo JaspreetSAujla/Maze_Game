@@ -31,8 +31,7 @@ class Chest:
     
     def __init__(self):
         """
-        Defines the initial variables using the attributes passed into the 
-        class.
+        Defines the initial variables.
 
         Variables:
             self.number_of_weapons = Defines how many weapons can be 
