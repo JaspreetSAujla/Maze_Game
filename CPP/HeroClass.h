@@ -28,6 +28,8 @@ class Hero {
         int heroAttack;
         int heroHealth;
 
+        Hero();
+
         Hero(string HeroName, int HeroHealth, int HeroAttack);
 
         void description();
