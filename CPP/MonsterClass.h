@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include "RandomNumber.cpp"
 #include "HeroClass.h"
 using namespace std;
 
@@ -23,7 +22,7 @@ class Monster {
                             used to determine the probability 
                             of dodging an attack.
         
-        MonsterNamesList = Stores a list of names for the monsters.
+        MonsterNames = Stores a list of names for the monsters.
     
     Attributes:
         MonsterName = Stores the name of the monster.
@@ -47,6 +46,8 @@ class Monster {
 
         Monster(string MonsterName, int MonsterHealth, int MonsterAttack);
 
+        void description();
+
         void fight(Hero hero);
 
     private:
@@ -55,9 +56,9 @@ class Monster {
 
         vector<int> NumbersForBlocking = {0, 0, 0, 1, 1, 1};
         vector<int> NumbersForDodging = {0, 1, 1};
-        vector<string> MonsterNamesList = {"Troll", "Giant Lizard", "Weeping Angel", 
-                                           "Bear", "Spider", "Skeleton", "Rat", 
-                                           "Baby Dragon", "Snake", "Zombie"};
+        vector<string> MonsterNames = {"Troll", "Giant Lizard", "Weeping Angel", 
+                                       "Bear", "Spider", "Skeleton", "Rat", 
+                                       "Baby Dragon", "Snake", "Zombie"};
 };
 
 #endif
