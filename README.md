@@ -2,7 +2,7 @@
 A simple text-based maze game where you have to find your way out of 
 the maze of rooms. Each room has different obstacles to overcome. 
 There are also items to aid you through your quest.
-There is a Python and Java version of the game.
+There is a Python, Java, and C++ version of the game.
 
 ## main:
 This is the file that needs to be ran in order to play the game.
