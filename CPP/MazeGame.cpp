@@ -2,11 +2,11 @@
 #include "MazeGame.h"
 #include "HeroClass.h"
 #include "RoomClass.h"
-#include "RandomNumber.cpp"
+#include "RandomNumber.h"
 using namespace std;
 
 MazeGame::MazeGame() {
-    this->maximumRooms = randomNumber(3, 11);
+    this->maximumRooms = randomNumberGenerator(3, 11);
     introduceGame();
 }
 
@@ -75,8 +75,12 @@ void MazeGame::runGame() {
             
         currentRoomNumber = Stores the current room number. 
                             Used as a counter in the while loop.
+        
+        dummyResponse = Holds the dummy response for which room 
+                        the user wants to go into.
     */
     int currentRoomNumber = 0;
+    string dummyResponse;
     Room currentRoom = Room();
     cout << "Now you are ready to enter the first room, good luck. \n";
 
@@ -87,7 +91,7 @@ void MazeGame::runGame() {
         currentRoom.runRoom(this->hero);
         cout << "There are 3 doors you can go through, left, right and forward. \n";
         cout << "Which door do you go through? \n(left/right/forward) \n";
-        cin;
+        cin >> dummyResponse;
         currentRoomNumber += 1;
     }
     currentRoom.bossBattle(this->hero);

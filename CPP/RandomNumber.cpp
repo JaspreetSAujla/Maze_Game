@@ -1,9 +1,10 @@
 #include<iostream>
 #include<ctime>
 #include<cstdlib>
+#include "RandomNumber.h"
 using namespace std;
 
-int randomNumber(int startNumber, int endNumber) {
+int randomNumberGenerator(int startNumber, int endNumber) {
     /*
     Takes a start number (inclusive) and an end number (exclusive), 
     and returns a random number within that range.

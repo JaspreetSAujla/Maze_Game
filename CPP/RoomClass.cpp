@@ -3,7 +3,7 @@
 #include "HeroClass.h"
 #include "MonsterClass.h"
 #include "ChestClass.h"
-#include "RandomNumber.cpp"
+#include "RandomNumber.h"
 using namespace std;
 
 Room::Room() {
@@ -22,8 +22,8 @@ Room::Room() {
 
         this->chest1/2 = Defines a chest.
     */
-    this->numberOfMonsters = randomNumber(0, 2);
-    this->numberOfChests = randomNumber(0, 2);
+    this->numberOfMonsters = randomNumberGenerator(0, 2);
+    this->numberOfChests = randomNumberGenerator(0, 2);
 
     if (this->numberOfMonsters == 2) {
         this->monster1 = Monster();
@@ -108,8 +108,8 @@ void Room::bossBattle(Hero hero) {
         dragon = Defines the boss.
     */
     Monster dragon = Monster("Giant Dragon", 
-                             randomNumber(150, 251), 
-                             randomNumber(30, 91));
+                             randomNumberGenerator(150, 251), 
+                             randomNumberGenerator(30, 91));
     cout << "You enter the room and see a Giant Dragon. \n";
     cout << "You can see the exit behind it. \n";
     cout << "You nust fight the dragon to escape. \n";

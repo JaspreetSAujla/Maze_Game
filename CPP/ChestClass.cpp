@@ -2,7 +2,7 @@
 #include<vector>
 #include "ChestClass.h"
 #include "HeroClass.h"
-#include "RandomNumber.cpp"
+#include "RandomNumber.h"
 using namespace std;
 
 Chest::Chest() {
@@ -21,14 +21,14 @@ Chest::Chest() {
         this.armour_points = Stores the health points of the armour.
     */
     // Picks random number of weapons and armour between 0 and 1.
-    this->numberOfWeapons = randomNumber(0, 2);
-    this->numberOfArmour = randomNumber(0, 2);
+    this->numberOfWeapons = randomNumberGenerator(0, 2);
+    this->numberOfArmour = randomNumberGenerator(0, 2);
 
     if (this->numberOfWeapons == 1) {
-        this->weaponPoints = randomNumber(1, 22);
+        this->weaponPoints = randomNumberGenerator(1, 22);
     }
     if (this->numberOfArmour == 1) {
-        this->armourPoints = randomNumber(1, 22);
+        this->armourPoints = randomNumberGenerator(1, 22);
     }
 }
 
@@ -59,13 +59,13 @@ void Chest::open(Hero hero) {
 
         if (response == "yes") {
             if (this->numberOfWeapons == 1) {
-                cout << "You have found " << WeaponsList[randomNumber(0, WeaponsList.size())] << endl;
+                cout << "You have found " << WeaponsList[randomNumberGenerator(0, WeaponsList.size())] << endl;
                 cout << "Adding " << this->weaponPoints << " to your attack points. \n";
                 hero.heroAttack += this->weaponPoints;
                 hero.description();
             }
             if (this->numberOfArmour == 1) {
-                cout << "You have found a " << ArmourList[randomNumber(0, ArmourList.size())] << endl;
+                cout << "You have found a " << ArmourList[randomNumberGenerator(0, ArmourList.size())] << endl;
                 cout << "Adding " << this->armourPoints << " to your health points. \n";
                 hero.heroHealth += this->armourPoints;
                 hero.description();

@@ -1,15 +1,15 @@
 #include<iostream>
 #include<vector>
 #include<stdlib.h>
-#include "RandomNumber.cpp"
+#include "RandomNumber.h"
 #include "MonsterClass.h"
 #include "HeroClass.h"
 using namespace std;
 
 Monster::Monster() {
-    this->monsterName = MonsterNames[randomNumber(0, MonsterNames.size())];
-    this->monsterHealth = randomNumber(20, 96);
-    this->monsterAttack = randomNumber(5, 46);
+    this->monsterName = MonsterNames[randomNumberGenerator(0, MonsterNames.size())];
+    this->monsterHealth = randomNumberGenerator(20, 96);
+    this->monsterAttack = randomNumberGenerator(5, 46);
 }
 
 
@@ -75,7 +75,7 @@ void Monster::fight(Hero hero) {
             cout << "Do you want to block or dodge the next attack? \n(block/dodge) \n";
             cin >> response;
             if (response == "dodge") {
-                chance = NumbersForDodging[randomNumber(0, NumbersForDodging.size())];
+                chance = NumbersForDodging[randomNumberGenerator(0, NumbersForDodging.size())];
                 if (chance == 1) {
                     cout << "You have dodged the attack. \n";
                 } else if (chance == 0) {
@@ -84,7 +84,7 @@ void Monster::fight(Hero hero) {
                     hero.heroHealth -= this->monsterAttack;
                 }
             } else if (response == "block") {
-                chance = NumbersForBlocking[randomNumber(0, NumbersForBlocking.size())];
+                chance = NumbersForBlocking[randomNumberGenerator(0, NumbersForBlocking.size())];
                 if (chance == 1) {
                     cout << "You have blocked the attack. \n";
                 } else if (chance == 0) {
