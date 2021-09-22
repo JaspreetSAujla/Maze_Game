@@ -2,7 +2,6 @@
 #include "HeroClass.h"
 #include "MonsterClass.h"
 #include "ChestClass.h"
-#include "RandomNumber.cpp"
 using namespace std;
 
 #ifndef ROOMCLASS_H
