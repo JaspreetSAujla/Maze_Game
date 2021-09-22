@@ -7,9 +7,9 @@ class Room {
     /**
     Defines the rooms as they get appended to the room list.
     The class will create the correct number of monster and chest objects.
-    This depends on the values in the __init__ method.
-    The __str__ method outputs what is in the room.
-    The run_room method runs the code for the actions taken within the room.
+    This depends on the values in the constructor.
+    The description method outputs what is in the room.
+    The runRoom method runs the code for the actions taken within the room.
 
     Class Variables:
         RandomNumber = Generates random numbers.
